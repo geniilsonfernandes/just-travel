@@ -8,7 +8,7 @@ const ExchangeRate = () => {
   const dolar = 5.53
 
   return (
-    <div className='flex items-center gap-1'>
+    <div className='flex items-center gap-2'>
       <Typography as='p' className='pr-2'>
         Cotação dólar hoje: {formatCurrency(dolar)}
       </Typography>
