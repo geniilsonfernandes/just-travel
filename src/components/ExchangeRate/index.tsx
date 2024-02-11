@@ -9,7 +9,12 @@ const ExchangeRate = () => {
 
   return (
     <div className='flex items-center gap-2'>
-      <Typography as='p' className='pr-2'>
+      <Typography
+        as='p'
+        size='paragraphSmall'
+        color='information'
+        className='mr-2'
+      >
         Cotação dólar hoje: {formatCurrency(dolar)}
       </Typography>
       <button>

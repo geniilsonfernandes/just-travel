@@ -45,7 +45,7 @@ const CartButton = () => {
           aria-label='Cart'
           role='dialog'
         >
-          <Typography as='span' className='text-white'>
+          <Typography as='span' size='paragraphSmall' className='text-white'>
             cart
           </Typography>
         </div>
