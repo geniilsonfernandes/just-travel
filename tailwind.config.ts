@@ -51,10 +51,11 @@ const config: Config = {
         'brand-color-black': '#0A2156',
         // Semantic Color
         message: '#4070F4',
-        sucess: '#0BB07B',
+        success: '#0BB07B',
         warning: '#FFAD0D',
         error: '#F03D3D',
-        information: '#F03D3D',
+        info: '#3C4C70',
+
         // Grayscale
         gray: {
           10: '#E7E9ED',
