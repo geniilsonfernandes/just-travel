@@ -35,11 +35,38 @@ const TypographyStyles = cva(['font-sans '], {
 type Variants = VariantProps<typeof TypographyStyles>
 type TypographyProps = {
   children: React.ReactNode
+
+  /**
+   * Typography className
+   * @default ''
+   */
+
   className?: string
+
+  /**
+   * Polimorphic component
+   * @default 'h1'
+   */
   as?: 'p' | 'span' | 'div' | 'h1' | 'h2' | 'h3' | 'h4'
+  /**
+   * Typography size
+   */
   size?: Variants['size']
+  /**
+   * Typography color
+   * @default 'black'
+   */
+  color?: Variants['color']
 } & Variants
 
+/**
+ * Typography for the application
+ *
+ *  ## Example
+ *
+ * @param param0
+ * @returns
+ */
 const Typography = ({
   children,
   as = 'h1',
