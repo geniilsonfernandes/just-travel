@@ -8,11 +8,18 @@ type CheckBoxProps = {
   value: string
   checked: boolean
   id: string
+  ariaLabel?: string
   onClick?: (e: FormEvent<HTMLButtonElement>) => void
 }
-const Checkbox = ({ checked = false, value, id, onClick }: CheckBoxProps) => {
+const Checkbox = ({
+  checked = false,
+  value,
+  id,
+  onClick,
+  ariaLabel,
+}: CheckBoxProps) => {
   return (
-    <div className='flex items-center'>
+    <div className='flex items-center' aria-label={ariaLabel} role='checkbox'>
       <CheckboxRadix.Root
         className={cn(
           'hover:bg-violet3 flex h-[20px] w-[20px] border-2  appearance-none items-center justify-center rounded-[4px] bg-white outline-none',
