@@ -28,10 +28,10 @@ const CartButton = () => {
         onClick={handleTogle}
       >
         <span className='px-1'>
-          <ShoppingCartSimple size={20} weight='fill' />
+          <ShoppingCartSimple size={20} weight='fill' className='text-white' />
         </span>
         <div
-          className='h-[32px] min-w-[32px] px-1 bg-white/25 rounded-full flex items-center justify-center font-medium'
+          className='h-[32px] min-w-[32px] px-1 bg-white/25 rounded-full flex items-center justify-center font-medium text-white'
           aria-label='Cart quantity'
         >
           {cartItems}
@@ -45,7 +45,7 @@ const CartButton = () => {
           aria-label='Cart'
           role='dialog'
         >
-          <Typography as='span' size='paragraphSmall' className='text-white'>
+          <Typography as='span' size='paragraphSmall' className='text-black'>
             cart
           </Typography>
         </div>
