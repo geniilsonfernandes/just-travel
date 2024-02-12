@@ -24,11 +24,11 @@ const TypographyStyles = cva(['font-sans '], {
       brandBlue: 'text-brand-color-blue',
       brandGreen: 'text-brand-color-green',
       brandBlack: 'text-brand-color-black',
+      gray200: 'text-gray-200',
     },
   },
   defaultVariants: {
     size: 'headingMedium',
-    color: 'black',
   },
 })
 
@@ -71,7 +71,7 @@ const Typography = ({
   children,
   as = 'h1',
   size = 'headingMedium',
-  color = 'black',
+  color,
   className,
 }: TypographyProps) => {
   const Tag = as as keyof JSX.IntrinsicElements
