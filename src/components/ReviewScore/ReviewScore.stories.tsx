@@ -3,7 +3,7 @@ import { StoryObj } from '@storybook/react'
 import ReviewScore from '.'
 
 const meta = {
-  title: 'Components/ReviewScore',
+  title: 'Filter/ReviewScore',
   component: ReviewScore,
   tags: ['autodocs'],
 }

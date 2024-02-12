@@ -3,7 +3,7 @@ import { StoryObj } from '@storybook/react'
 import FilterButton from '.'
 
 const meta = {
-  title: 'Components/FilterButton',
+  title: 'Filter/FilterButton',
   component: FilterButton,
   tags: ['autodocs'],
 }
