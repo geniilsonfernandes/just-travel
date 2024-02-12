@@ -19,14 +19,13 @@ const Checkbox = ({
   ariaLabel,
 }: CheckBoxProps) => {
   return (
-    <div className='flex items-center' aria-label={ariaLabel} role='checkbox'>
+    <div className='flex items-center' aria-label={ariaLabel}>
       <CheckboxRadix.Root
         className={cn(
           'hover:bg-violet3 flex h-[20px] w-[20px] border-2  appearance-none items-center justify-center rounded-[4px] bg-white outline-none',
           checked ? 'border-brand-color-blue' : 'border-gray-400'
         )}
         checked={checked}
-        onChange={(e) => onClick?.(e)}
         id={id}
         onClick={(e) => {
           onClick?.(e)

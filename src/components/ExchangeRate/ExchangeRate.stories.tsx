@@ -1,3 +1,5 @@
+/* c8 ignore start */
+
 import { StoryObj } from '@storybook/react'
 
 import ExchangeRate from '.'

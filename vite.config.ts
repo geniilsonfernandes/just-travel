@@ -9,6 +9,12 @@ export default defineConfig({
     environment: 'jsdom',
     css: true,
     setupFiles: './src/test/setup.ts',
+    exclude: [
+      '**/node_modules/**',
+      '**/dist/**',
+      '**/cypress/**',
+      'src/**/*.stories.{tsx,ts,jsx,js}',
+    ],
     coverage: {
       reporter: ['text', 'json', 'html'],
     },
