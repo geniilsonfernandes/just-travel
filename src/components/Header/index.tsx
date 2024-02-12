@@ -8,7 +8,7 @@ import Logo from '../Logo'
 
 const Header = () => {
   return (
-    <nav className='border-b-[1px] border-gray-10' aria-label='Header'>
+    <nav className='border-b-[1px] border-gray-10 bg-white' aria-label='Header'>
       <div className='flex items-center justify-between py-6 container'>
         <Logo />
         <div className='flex items-center gap-1'>

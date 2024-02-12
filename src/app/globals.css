@@ -23,7 +23,6 @@
   font-style: normal;
 }
 
-
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -43,8 +42,8 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
- 
+
+  background: #F6F6F6
 }
 
 @layer utilities {
@@ -52,4 +51,3 @@ body {
     text-wrap: balance;
   }
 }
-
