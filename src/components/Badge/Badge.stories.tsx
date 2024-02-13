@@ -1,11 +1,11 @@
-import { StoryObj } from "@storybook/react"
+import { StoryObj } from '@storybook/react'
 
-import Badge from "."
+import Badge from '.'
 
 const meta = {
-  title: "Components/Badge",
+  title: 'Components/Badge',
   component: Badge,
-  tags: ["autodocs"],
+  tags: ['autodocs'],
 }
 
 export default meta

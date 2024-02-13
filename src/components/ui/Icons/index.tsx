@@ -316,7 +316,7 @@ const Heart = ({ fill }: { fill?: boolean }) => (
       clipRule='evenodd'
       d='M10.3823 2.711C11.0713 1.905 12.2633 1 14.0783 1C17.2533 1 19.3823 3.98 19.3823 6.755C19.3823 12.556 12.1603 17 10.3823 17C8.60432 17 1.38232 12.556 1.38232 6.755C1.38232 3.98 3.51132 1 6.68632 1C8.50132 1 9.69332 1.905 10.3823 2.711Z'
       stroke='white'
-      fill={fill ? "white" : "none"}
+      fill={fill ? 'white' : 'none'}
       strokeWidth='1.5'
       strokeLinecap='round'
       strokeLinejoin='round'

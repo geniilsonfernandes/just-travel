@@ -1,42 +1,42 @@
-import { fireEvent, render, screen } from "@testing-library/react"
-import { describe, expect, it, vi } from "vitest"
+import { fireEvent, render, screen } from '@testing-library/react'
+import { describe, expect, it, vi } from 'vitest'
 
-import Checkbox from "."
+import Checkbox from '.'
 
 const onClick = vi.fn()
 
-describe("Checkbox Rendering", () => {
-  it("should render Checkbox correctly", () => {
+describe('Checkbox Rendering', () => {
+  it('should render Checkbox correctly', () => {
     render(<Checkbox id='foo' checked={true} value='foo' onClick={onClick} />)
 
-    const button = screen.getByRole("checkbox")
-    const label = screen.getByText("foo")
+    const button = screen.getByRole('checkbox')
+    const label = screen.getByText('foo')
 
     expect(button).toBeInTheDocument()
     expect(label).toBeInTheDocument()
   })
 })
-describe("Checkbox Style", () => {
-  it("hould have correct color when active", () => {
+describe('Checkbox Style', () => {
+  it('hould have correct color when active', () => {
     render(<Checkbox id='foo' checked={true} value='foo' onClick={onClick} />)
 
-    const button = screen.getByRole("checkbox")
+    const button = screen.getByRole('checkbox')
 
-    expect(button).toHaveClass("border-brand-color-blue")
+    expect(button).toHaveClass('border-brand-color-blue')
   })
-  it("hould have correct color when active", () => {
+  it('hould have correct color when active', () => {
     render(<Checkbox id='foo' checked={false} value='foo' onClick={onClick} />)
 
-    const button = screen.getByRole("checkbox")
+    const button = screen.getByRole('checkbox')
 
-    expect(button).toHaveClass("border-gray-400")
+    expect(button).toHaveClass('border-gray-400')
   })
 })
-describe("FilterButton Functionality", () => {
-  it("should call onClick function twice when button is clicked twice", () => {
+describe('FilterButton Functionality', () => {
+  it('should call onClick function twice when button is clicked twice', () => {
     render(<Checkbox id='foo' checked={true} value='foo' onClick={onClick} />)
 
-    const button = screen.getByRole("checkbox")
+    const button = screen.getByRole('checkbox')
 
     fireEvent.click(button)
     fireEvent.click(button)

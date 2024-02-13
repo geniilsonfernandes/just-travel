@@ -1,13 +1,13 @@
 /* c8 ignore start */
 
-import { StoryObj } from "@storybook/react"
+import { StoryObj } from '@storybook/react'
 
-import Filter from "."
+import Filter from '.'
 
 const meta = {
-  title: "Filter/Filter",
+  title: 'Filter/Filter',
   component: Filter,
-  tags: ["autodocs"],
+  tags: ['autodocs'],
 }
 
 export default meta

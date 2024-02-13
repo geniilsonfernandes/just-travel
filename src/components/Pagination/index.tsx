@@ -1,7 +1,7 @@
-import usePagination from "@/hooks/usePagination"
-import { cn } from "@/utils"
-import { CaretLeft } from "@phosphor-icons/react"
-import { CaretRight } from "@phosphor-icons/react/dist/ssr"
+import usePagination from '@/hooks/usePagination'
+import { cn } from '@/utils'
+import { CaretLeft } from '@phosphor-icons/react'
+import { CaretRight } from '@phosphor-icons/react/dist/ssr'
 
 type PaginationProps = {
   onPageChange?: (page: number) => void
@@ -57,8 +57,8 @@ const Pagination = ({
       <ul className='flex gap-4 text-brand-color-blue/70'>
         {range.map((item, index) => (
           <li key={index}>
-            {item === "..." ? (
-              "..."
+            {item === '...' ? (
+              '...'
             ) : (
               <button
                 onClick={() => {
@@ -67,8 +67,8 @@ const Pagination = ({
                 }}
                 aria-label={`Go to page ${item}`}
                 role='button'
-                className={cn("w-6 h-6 font-book", {
-                  "font-bold text-brand-color-blue": currentPage === item,
+                className={cn('w-6 h-6 font-book', {
+                  'font-bold text-brand-color-blue': currentPage === item,
                 })}
               >
                 {item}

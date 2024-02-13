@@ -1,7 +1,7 @@
-import axios, { AxiosResponse } from "axios"
-import { ITicketDTO } from "./DTOS/Ticket.DTO"
+import axios, { AxiosResponse } from 'axios'
+import { ITicketDTO } from './DTOS/Ticket.DTO'
 
-const baseURL = "https://65b98494b71048505a8aea91.mockapi.io/api/v1"
+const baseURL = 'https://65b98494b71048505a8aea91.mockapi.io/api/v1'
 
 const axiosInstance = axios.create({
   baseURL,
@@ -25,7 +25,7 @@ export const ticketsAPI: ITicketsAPI = {
     } = { page: 1, limit: 6 }
   ): Promise<ITicketDTO[]> {
     const response: AxiosResponse<ITicketDTO[]> = await axiosInstance.get(
-      "/tickets",
+      '/tickets',
       { params }
     )
 
@@ -37,10 +37,10 @@ export const ticketsAPI: ITicketsAPI = {
       page: number
       limit: number
       search: string
-    } = { page: 1, limit: 6, search: "" }
+    } = { page: 1, limit: 6, search: '' }
   ): Promise<ITicketDTO[]> {
     const response: AxiosResponse<ITicketDTO[]> = await axiosInstance.get(
-      "/tickets",
+      '/tickets',
       {
         params: {
           ...params,

@@ -1,11 +1,11 @@
-import { useAppDispatch } from "@/store"
-import { searchTickets } from "@/store/reducers/tickets/ticketsSlice"
-import { MagnifyingGlass, MapPin } from "@phosphor-icons/react/dist/ssr"
-import { useState } from "react"
+import { useAppDispatch } from '@/store'
+import { searchTickets } from '@/store/reducers/tickets/ticketsSlice'
+import { MagnifyingGlass, MapPin } from '@phosphor-icons/react/dist/ssr'
+import { useState } from 'react'
 
 const Search = () => {
   const dispatch = useAppDispatch()
-  const [searchValue, setSearchValue] = useState("")
+  const [searchValue, setSearchValue] = useState('')
 
   const handleSearch = () => {
     dispatch(searchTickets(searchValue))

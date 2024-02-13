@@ -1,13 +1,13 @@
-"use client"
+'use client'
 
-import { useAppDispatch, useAppSelector } from "@/store"
-import { getLocalCart, removeFromCart } from "@/store/reducers/cart/cartSlice"
-import { User } from "@phosphor-icons/react"
-import { useEffect } from "react"
-import Button from "../Button"
-import CartButton from "../CartButton"
-import ExchangeRate from "../ExchangeRate"
-import Logo from "../Logo"
+import { useAppDispatch, useAppSelector } from '@/store'
+import { getLocalCart, removeFromCart } from '@/store/reducers/cart/cartSlice'
+import { User } from '@phosphor-icons/react'
+import { useEffect } from 'react'
+import Button from '../Button'
+import CartButton from '../CartButton'
+import ExchangeRate from '../ExchangeRate'
+import Logo from '../Logo'
 
 const Header = () => {
   const { items } = useAppSelector((state) => state.cart)

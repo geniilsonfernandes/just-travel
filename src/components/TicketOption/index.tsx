@@ -1,5 +1,5 @@
-import Typography from "../Typography"
-import Icons from "../ui/Icons"
+import Typography from '../Typography'
+import Icons from '../ui/Icons'
 
 type TicketProps = {
   title: string

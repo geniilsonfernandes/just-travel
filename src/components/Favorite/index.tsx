@@ -1,4 +1,4 @@
-import Icons from "../ui/Icons"
+import Icons from '../ui/Icons'
 
 type FavoriteProps = {
   onClick: () => void

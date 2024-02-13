@@ -1,4 +1,4 @@
-import Typography from "../Typography"
+import Typography from '../Typography'
 
 type PriceTicketProps = {
   price: number
@@ -7,7 +7,7 @@ type PriceTicketProps = {
 }
 const PriceTicket = ({
   price = 0,
-  currency = "R$",
+  currency = 'R$',
   promotionalPrice,
 }: PriceTicketProps) => {
   return (

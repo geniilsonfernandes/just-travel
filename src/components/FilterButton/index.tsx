@@ -1,28 +1,28 @@
-import { cva } from "class-variance-authority"
+import { cva } from 'class-variance-authority'
 
-import Typography from "../Typography"
+import Typography from '../Typography'
 
 const FilterButtonStyles = cva(
-  ["h-[34px] p-2 inline-flex items-center rounded-sm"],
+  ['h-[34px] p-2 inline-flex items-center rounded-sm'],
   {
     variants: {
       active: {
-        true: "text-white border border-transparent bg-brand-color-blue hover:bg-brand-color-blue/80 transition-colors duration-300",
+        true: 'text-white border border-transparent bg-brand-color-blue hover:bg-brand-color-blue/80 transition-colors duration-300',
         false:
-          "text-gray-200 border border-gray-200 hover:bg-brand-color-blue/10 transition-colors duration-300",
+          'text-gray-200 border border-gray-200 hover:bg-brand-color-blue/10 transition-colors duration-300',
       },
     },
   }
 )
 
 const FilterButtonStylesOutline = cva(
-  ["h-[34px] p-2 inline-flex items-center rounded-sm"],
+  ['h-[34px] p-2 inline-flex items-center rounded-sm'],
   {
     variants: {
       active: {
-        true: "text-brand-color-blue border border-brand-color-blue hover:bg-brand-color-blue/20 transition-colors duration-300",
+        true: 'text-brand-color-blue border border-brand-color-blue hover:bg-brand-color-blue/20 transition-colors duration-300',
         false:
-          "text-gray-200 border border-gray-200 hover:bg-brand-color-blue/10 transition-colors duration-300",
+          'text-gray-200 border border-gray-200 hover:bg-brand-color-blue/10 transition-colors duration-300',
       },
     },
   }
@@ -33,7 +33,7 @@ type FilterButtonProps = {
   active?: boolean
   onClick?: () => void
   children: React.ReactNode
-  variant?: "fill" | "outline"
+  variant?: 'fill' | 'outline'
   className?: string
 }
 
@@ -46,13 +46,13 @@ const FilterButton = ({
   children,
   active = false,
   className,
-  variant = "fill",
+  variant = 'fill',
   onClick,
 }: FilterButtonProps) => {
   return (
     <button
       className={
-        variant === "fill"
+        variant === 'fill'
           ? FilterButtonStyles({ active })
           : FilterButtonStylesOutline({ active })
       }

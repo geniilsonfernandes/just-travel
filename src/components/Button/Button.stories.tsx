@@ -1,11 +1,11 @@
-import { StoryObj } from "@storybook/react"
+import { StoryObj } from '@storybook/react'
 
-import Button from "."
+import Button from '.'
 
 const meta = {
-  title: "UI/Button",
+  title: 'UI/Button',
   component: Button,
-  tags: ["autodocs"],
+  tags: ['autodocs'],
 }
 
 export default meta

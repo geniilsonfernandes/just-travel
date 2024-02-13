@@ -1,11 +1,11 @@
-import { StoryObj } from "@storybook/react"
+import { StoryObj } from '@storybook/react'
 
-import Pagination from "."
+import Pagination from '.'
 
 const meta = {
-  title: "Components/Pagination",
+  title: 'Components/Pagination',
   component: Pagination,
-  tags: ["autodocs"],
+  tags: ['autodocs'],
 }
 
 export default meta

@@ -1,12 +1,12 @@
-import { StoryObj } from "@storybook/react"
+import { StoryObj } from '@storybook/react'
 
-import CartItem from "."
-import { cartMock } from "../Cart/mock"
+import CartItem from '.'
+import { cartMock } from '../Cart/mock'
 
 const meta = {
-  title: "Components/CartItem",
+  title: 'Components/CartItem',
   component: CartItem,
-  tags: ["autodocs"],
+  tags: ['autodocs'],
 }
 
 export default meta

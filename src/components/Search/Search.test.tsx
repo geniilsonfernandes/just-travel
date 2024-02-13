@@ -1,21 +1,21 @@
-import { cleanup, fireEvent, render, screen } from "@testing-library/react"
-import { afterEach, beforeAll, describe, expect, it, vi } from "vitest"
+import { cleanup, fireEvent, render, screen } from '@testing-library/react'
+import { afterEach, beforeAll, describe, expect, it, vi } from 'vitest'
 
-import Search from "."
+import Search from '.'
 
 afterEach(cleanup)
 
 const searchTickets = vi.fn()
 
-vi.mock("@/store/reducers/tickets/ticketsSlice", () => ({
+vi.mock('@/store/reducers/tickets/ticketsSlice', () => ({
   searchTickets: () => {
     searchTickets()
   },
 }))
 
-describe("Search rendering", () => {
+describe('Search rendering', () => {
   beforeAll(() => {
-    vi.mock("@/store", () => ({
+    vi.mock('@/store', () => ({
       useAppDispatch: vi.fn().mockReturnValue(vi.fn()),
       useAppSelector: vi.fn((selector) =>
         selector({
@@ -33,26 +33,26 @@ describe("Search rendering", () => {
     }))
   })
 
-  it("should render Search and type in input", async () => {
+  it('should render Search and type in input', async () => {
     render(<Search />)
-    const input = screen.getByPlaceholderText("Busque por atração")
+    const input = screen.getByPlaceholderText('Busque por atração')
 
     fireEvent.change(input, {
-      target: { value: "foo" },
+      target: { value: 'foo' },
     })
 
-    expect(input).toHaveValue("foo")
+    expect(input).toHaveValue('foo')
   })
 
-  it("should call searchTickets", async () => {
+  it('should call searchTickets', async () => {
     render(<Search />)
 
-    const input = screen.getByPlaceholderText("Busque por atração")
+    const input = screen.getByPlaceholderText('Busque por atração')
 
-    const button = screen.getByLabelText("search button")
+    const button = screen.getByLabelText('search button')
 
     fireEvent.change(input, {
-      target: { value: "foo" },
+      target: { value: 'foo' },
     })
 
     fireEvent.click(button)

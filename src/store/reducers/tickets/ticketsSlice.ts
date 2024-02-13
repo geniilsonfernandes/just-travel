@@ -1,8 +1,8 @@
-import { ticketsAPI } from "@/api"
-import { ITicketDTO } from "@/api/DTOS/Ticket.DTO"
-import { TicketSchema } from "@/shared/validate"
-import { createSlice, Dispatch, PayloadAction } from "@reduxjs/toolkit"
-import { AxiosError } from "axios"
+import { ticketsAPI } from '@/api'
+import { ITicketDTO } from '@/api/DTOS/Ticket.DTO'
+import { TicketSchema } from '@/shared/validate'
+import { createSlice, Dispatch, PayloadAction } from '@reduxjs/toolkit'
+import { AxiosError } from 'axios'
 
 interface TicketsState {
   data: ITicketDTO[]
@@ -31,11 +31,11 @@ const initialState: TicketsState = {
   totalPages: 1,
   ItemsPerPage: 6,
   //
-  search: "",
+  search: '',
 }
 
 const ticketsSlice = createSlice({
-  name: "tickets",
+  name: 'tickets',
   initialState,
   reducers: {
     getTicketsStart(state) {
@@ -71,7 +71,7 @@ export const {
   changeMeta,
 } = ticketsSlice.actions
 
-const CACHE_KEY = "ticketsCache"
+const CACHE_KEY = 'ticketsCache'
 
 const getCache = (): {
   [key: string]: { data: ITicketDTO[]; timestamp: number }
@@ -133,7 +133,7 @@ export const fetchTickets =
       if (error instanceof AxiosError) {
         dispatch(getTicketsFailure(error.response?.data.message))
       }
-      dispatch(getTicketsFailure("Error ao buscar dados do servidor"))
+      dispatch(getTicketsFailure('Error ao buscar dados do servidor'))
     }
   }
 

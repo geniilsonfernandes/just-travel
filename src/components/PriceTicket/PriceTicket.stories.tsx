@@ -1,11 +1,11 @@
-import { StoryObj } from "@storybook/react"
+import { StoryObj } from '@storybook/react'
 
-import PriceTicket from "."
+import PriceTicket from '.'
 
 const meta = {
-  title: "Components/PriceTicket",
+  title: 'Components/PriceTicket',
   component: PriceTicket,
-  tags: ["autodocs"],
+  tags: ['autodocs'],
 }
 
 export default meta
@@ -20,7 +20,7 @@ export const Default: Story = {
 
 export const WithoutPromotionalPrice: Story = {
   args: {
-    currency: "R$",
+    currency: 'R$',
     price: 100,
     promotionalPrice: 50,
   },
