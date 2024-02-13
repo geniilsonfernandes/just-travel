@@ -2,30 +2,9 @@ import { fireEvent, render, screen } from '@testing-library/react'
 import { describe, expect, it, vi } from 'vitest'
 
 import CartItem from '.'
+import { cartMock } from '../Cart/mock'
 
-const cartItem = {
-  id: '1',
-  name: 'teste',
-  price: 100,
-  quantity: 2,
-  ticket: {
-    createdAt: '2022-01-01T00:00:00.000Z',
-    description: 'lorem ipsum dolor sit amet',
-    id: '1',
-    image: '/image.png',
-    location: 'Brasil',
-    name: 'teste',
-    price: {
-      discount: 60,
-      full: 100,
-    },
-    rating: {
-      reviewsCount: 10,
-      value: 3.5,
-    },
-    updatedAt: '2022-01-01T00:00:00.000Z',
-  },
-}
+const cartItem = cartMock[0]
 
 const onRemoveCartItem = vi.fn()
 

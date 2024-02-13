@@ -41,7 +41,7 @@ const Home = () => {
         </div>
 
         <RenderIf condition={isError}>
-          <div className='flex flex-col col-span-8 gap-6'>
+          <div className='flex flex-col col-span-8 gap-6' aria-label='error'>
             <ErrorMessage
               error={error || 'Erro ao buscar ingressos'}
               onClick={() => dispatch(fetchTickets())}
@@ -58,7 +58,7 @@ const Home = () => {
         </RenderIf>
 
         <RenderIf condition={!isError && !isLoading && isEmpty}>
-          <div className='flex flex-col col-span-8 gap-6'>
+          <div className='flex flex-col col-span-8 gap-6' aria-label='empty'>
             <Empty onClick={() => dispatch(fetchTickets())} />
           </div>
         </RenderIf>
@@ -74,13 +74,13 @@ const Home = () => {
                 currency='R$'
                 description={ticket.location}
                 imageAlt={ticket.name}
-                imageSrc={ticket.image}
+                imageSrc={ticket.image || ''}
                 price={ticket.price.full}
                 promotionalPrice={ticket.price.discount}
                 tag={{
-                  reviewsCount: ticket.rating.reviewsCount,
-                  review: ticket.rating.value,
-                  label: `${ticket.rating.reviewsCount} avaliações`,
+                  reviewsCount: ticket?.rating?.reviewsCount || 0,
+                  review: ticket?.rating?.value || 0,
+                  label: `${ticket?.rating?.reviewsCount || 0} avaliações`,
                   link: 'https://just-travel.com/avaliacoes',
                 }}
               />
