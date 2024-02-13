@@ -1,8 +1,8 @@
-import { Icart } from '@/store/reducers/cart/cartSlice'
+import { Icart } from "@/store/reducers/cart/cartSlice"
 
-import { DISCOUNT } from '@/shared/cart'
-import { formatPrice } from '@/utils'
-import CartItem from '../CartItem'
+import { DISCOUNT } from "@/shared/cart"
+import { formatPrice } from "@/utils"
+import CartItem from "../CartItem"
 
 type CartProps = {
   cart: Icart[]

@@ -1,9 +1,9 @@
-import Image from 'next/image'
-import Typography from '../Typography'
+import Image from "next/image"
+import Typography from "../Typography"
 
-import brazilFlag from '@/assets/brazil_flag.png'
-import { formatCurrency } from '@/utils'
-import { Question } from '@phosphor-icons/react'
+import brazilFlag from "@/assets/brazil_flag.png"
+import { formatCurrency } from "@/utils"
+import { Question } from "@phosphor-icons/react"
 const ExchangeRate = () => {
   const dolar = 5.53
 

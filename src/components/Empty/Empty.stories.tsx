@@ -1,11 +1,11 @@
-import { StoryObj } from '@storybook/react'
+import { StoryObj } from "@storybook/react"
 
-import Empty from '.'
+import Empty from "."
 
 const meta = {
-  title: 'Components/Empty',
+  title: "Components/Empty",
   component: Empty,
-  tags: ['autodocs'],
+  tags: ["autodocs"],
 }
 
 export default meta

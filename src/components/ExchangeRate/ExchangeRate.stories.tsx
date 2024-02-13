@@ -1,13 +1,13 @@
 /* c8 ignore start */
 
-import { StoryObj } from '@storybook/react'
+import { StoryObj } from "@storybook/react"
 
-import ExchangeRate from '.'
+import ExchangeRate from "."
 
 const meta = {
-  title: 'Components/ExchangeRate',
+  title: "Components/ExchangeRate",
   component: ExchangeRate,
-  tags: ['autodocs'],
+  tags: ["autodocs"],
 }
 
 export default meta

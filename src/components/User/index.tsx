@@ -1,5 +1,5 @@
-import { CaretDown } from '@phosphor-icons/react'
-import Typography from '../Typography'
+import { CaretDown } from "@phosphor-icons/react"
+import Typography from "../Typography"
 
 type UserProps = {
   userName?: string

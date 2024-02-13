@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef } from "react"
 
 const useClickOutside = (isOpen: boolean, callback: () => void) => {
   const ref = useRef<HTMLDivElement>(null)
@@ -11,11 +11,11 @@ const useClickOutside = (isOpen: boolean, callback: () => void) => {
 
   useEffect(() => {
     if (isOpen) {
-      document.addEventListener('click', handleClickOutside)
+      document.addEventListener("click", handleClickOutside)
     }
 
     return () => {
-      document.removeEventListener('click', handleClickOutside)
+      document.removeEventListener("click", handleClickOutside)
     }
   }, [isOpen])
 

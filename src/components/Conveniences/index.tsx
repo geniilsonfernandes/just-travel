@@ -1,4 +1,4 @@
-import Icons from '@/components/ui/Icons'
+import Icons from "@/components/ui/Icons"
 
 type ConveniencesProps = {
   airplane?: boolean

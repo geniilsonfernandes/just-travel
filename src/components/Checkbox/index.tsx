@@ -1,8 +1,8 @@
-import * as CheckboxRadix from '@radix-ui/react-checkbox'
+import * as CheckboxRadix from "@radix-ui/react-checkbox"
 
-import { cn } from '@/utils'
-import { FormEvent } from 'react'
-import Icons from '../ui/Icons'
+import { cn } from "@/utils"
+import { FormEvent } from "react"
+import Icons from "../ui/Icons"
 
 type CheckBoxProps = {
   value: string
@@ -22,8 +22,8 @@ const Checkbox = ({
     <div className='flex items-center' aria-label={ariaLabel}>
       <CheckboxRadix.Root
         className={cn(
-          'hover:bg-violet3 flex h-[20px] w-[20px] border-2  appearance-none items-center justify-center rounded-[4px] bg-white outline-none',
-          checked ? 'border-brand-color-blue' : 'border-gray-400'
+          "hover:bg-violet3 flex h-[20px] w-[20px] border-2  appearance-none items-center justify-center rounded-[4px] bg-white outline-none",
+          checked ? "border-brand-color-blue" : "border-gray-400"
         )}
         checked={checked}
         id={id}

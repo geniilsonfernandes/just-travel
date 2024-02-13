@@ -1,18 +1,18 @@
-'use client'
+"use client"
 
-import { ITicketDTO } from '@/api/DTOS/Ticket.DTO'
-import Conveniences from '@/components/Conveniences'
-import PriceTicket from '@/components/PriceTicket'
-import ReviewTag from '@/components/ReviewTag'
-import TicketInformation from '@/components/TicketInformation'
-import TicketOption from '@/components/TicketOption'
-import Typography from '@/components/Typography'
-import Icons from '@/components/ui/Icons'
-import { useAppDispatch } from '@/store'
-import { addToCart } from '@/store/reducers/cart/cartSlice'
-import { MapPin } from '@phosphor-icons/react/dist/ssr'
-import Image from 'next/image'
-import Link from 'next/link'
+import { ITicketDTO } from "@/api/DTOS/Ticket.DTO"
+import Conveniences from "@/components/Conveniences"
+import PriceTicket from "@/components/PriceTicket"
+import ReviewTag from "@/components/ReviewTag"
+import TicketInformation from "@/components/TicketInformation"
+import TicketOption from "@/components/TicketOption"
+import Typography from "@/components/Typography"
+import Icons from "@/components/ui/Icons"
+import { useAppDispatch } from "@/store"
+import { addToCart } from "@/store/reducers/cart/cartSlice"
+import { MapPin } from "@phosphor-icons/react/dist/ssr"
+import Image from "next/image"
+import Link from "next/link"
 
 type TicketProps = {
   data: ITicketDTO
@@ -35,7 +35,7 @@ const Ticket = ({ data }: TicketProps) => {
   return (
     <div className='container py-9 h-full '>
       <div className='flex gap-2 px-6 sm:px-0'>
-        <Link href={'/'} passHref>
+        <Link href={"/"} passHref>
           <button className='flex items-center justify-center w-8 h-8 text-brand-color-black '>
             <Icons.ArrowLeft />
           </button>
@@ -49,7 +49,7 @@ const Ticket = ({ data }: TicketProps) => {
             <div className='w-4'>
               <MapPin size={21} className='text-brand-color-blue' />
             </div>
-            <Typography size='paragraphSmall' as='p' color={'information'}>
+            <Typography size='paragraphSmall' as='p' color={"information"}>
               {data.location}
             </Typography>
           </div>

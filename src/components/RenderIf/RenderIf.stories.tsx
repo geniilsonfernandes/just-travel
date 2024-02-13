@@ -1,11 +1,11 @@
-import { StoryObj } from '@storybook/react'
+import { StoryObj } from "@storybook/react"
 
-import RenderIf from '.'
+import RenderIf from "."
 
 const meta = {
-  title: 'Components/RenderIf',
+  title: "Components/RenderIf",
   component: RenderIf,
-  tags: ['autodocs'],
+  tags: ["autodocs"],
 }
 
 export default meta

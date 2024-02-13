@@ -1,5 +1,5 @@
-import Link from 'next/link'
-import Typography from '../Typography'
+import Link from "next/link"
+import Typography from "../Typography"
 
 export type ReviewTagProps = {
   review: number
@@ -9,8 +9,8 @@ export type ReviewTagProps = {
 }
 
 const ReviewTag = ({
-  label = 'no rating',
-  link = '#',
+  label = "no rating",
+  link = "#",
   review = 0,
   reviewsCount = 0,
 }: ReviewTagProps) => {

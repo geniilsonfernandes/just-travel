@@ -1,8 +1,8 @@
-import useClickOutside from '@/hooks/useClickOutside'
-import { Icart } from '@/store/reducers/cart/cartSlice'
-import { ShoppingCartSimple } from '@phosphor-icons/react'
-import { useState } from 'react'
-import Cart from '../Cart'
+import useClickOutside from "@/hooks/useClickOutside"
+import { Icart } from "@/store/reducers/cart/cartSlice"
+import { ShoppingCartSimple } from "@phosphor-icons/react"
+import { useState } from "react"
+import Cart from "../Cart"
 
 // type ClikOutsideProps = React.HTMLAttributes<HTMLDivElement>
 // const ClikOutside = (props: ClikOutsideProps) => (

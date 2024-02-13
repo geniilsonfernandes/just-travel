@@ -1,13 +1,13 @@
-import { fireEvent, render, screen } from '@testing-library/react'
-import { describe, expect, it, vi } from 'vitest'
+import { fireEvent, render, screen } from "@testing-library/react"
+import { describe, expect, it, vi } from "vitest"
 
-import Pagination from '.'
+import Pagination from "."
 
 const onItemsPerPageChange = vi.fn()
 const onPageChange = vi.fn()
 
-describe('Pagination', () => {
-  it('should render Pagination', () => {
+describe("Pagination", () => {
+  it("should render Pagination", () => {
     render(
       <Pagination
         onItemsPerPageChange={onItemsPerPageChange}
@@ -17,9 +17,9 @@ describe('Pagination', () => {
       />
     )
 
-    expect(screen.getByText('60 Resultados')).toBeInTheDocument()
+    expect(screen.getByText("60 Resultados")).toBeInTheDocument()
   })
-  it('should call onPageChange when click next button', () => {
+  it("should call onPageChange when click next button", () => {
     render(
       <Pagination
         onItemsPerPageChange={onItemsPerPageChange}
@@ -29,13 +29,13 @@ describe('Pagination', () => {
       />
     )
 
-    const nextButton = screen.getByLabelText('Next page')
+    const nextButton = screen.getByLabelText("Next page")
 
     fireEvent.click(nextButton)
 
     expect(onPageChange).toBeCalledTimes(1)
   })
-  it('should call onPageChange when click to page 2', () => {
+  it("should call onPageChange when click to page 2", () => {
     render(
       <Pagination
         onItemsPerPageChange={onItemsPerPageChange}
@@ -45,14 +45,14 @@ describe('Pagination', () => {
       />
     )
 
-    const pageTwo = screen.getByLabelText('Go to page 2')
+    const pageTwo = screen.getByLabelText("Go to page 2")
 
     fireEvent.click(pageTwo)
 
     expect(onPageChange).toBeCalledWith(2)
   })
 
-  it('should call onItemsPerPageChange when change', () => {
+  it("should call onItemsPerPageChange when change", () => {
     render(
       <Pagination
         onItemsPerPageChange={onItemsPerPageChange}
@@ -62,10 +62,10 @@ describe('Pagination', () => {
       />
     )
 
-    const select = screen.getByLabelText('Items per page')
+    const select = screen.getByLabelText("Items per page")
 
     fireEvent.change(select, {
-      target: { value: '12' },
+      target: { value: "12" },
     })
 
     expect(onItemsPerPageChange).toBeCalledTimes(1)

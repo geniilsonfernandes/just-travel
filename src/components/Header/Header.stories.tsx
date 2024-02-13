@@ -1,12 +1,12 @@
 /* c8 ignore start */
 
-import { Providers } from '@/providers'
-import Header from '.'
+import { Providers } from "@/providers"
+import Header from "."
 
 const meta = {
-  title: 'Components/Header',
+  title: "Components/Header",
   component: Header,
-  tags: ['autodocs'],
+  tags: ["autodocs"],
 }
 
 export default meta

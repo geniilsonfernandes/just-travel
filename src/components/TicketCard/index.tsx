@@ -1,15 +1,15 @@
-'use client'
+"use client"
 
-import { MapPin } from '@phosphor-icons/react/dist/ssr'
-import Image from 'next/image'
-import PriceTicket from '../PriceTicket'
-import ReviewTag, { ReviewTagProps } from '../ReviewTag'
-import Typography from '../Typography'
+import { MapPin } from "@phosphor-icons/react/dist/ssr"
+import Image from "next/image"
+import PriceTicket from "../PriceTicket"
+import ReviewTag, { ReviewTagProps } from "../ReviewTag"
+import Typography from "../Typography"
 
-import Link from 'next/link'
-import Badge from '../Badge'
-import Favorite from '../Favorite'
-import Icons from '../ui/Icons'
+import Link from "next/link"
+import Badge from "../Badge"
+import Favorite from "../Favorite"
+import Icons from "../ui/Icons"
 
 type TicketCardProps = {
   tag: ReviewTagProps
@@ -68,16 +68,16 @@ const TicketCard = ({
               <div className='w-4'>
                 <MapPin size={21} className='text-brand-color-blue' />
               </div>
-              <Typography size='paragraphSmall' as='p' color={'information'}>
+              <Typography size='paragraphSmall' as='p' color={"information"}>
                 {description}
               </Typography>
             </div>
           </div>
 
           <ReviewTag
-            label={tag?.label || ''}
+            label={tag?.label || ""}
             review={tag?.review || 0}
-            link={tag?.link || ''}
+            link={tag?.link || ""}
             reviewsCount={tag?.reviewsCount || 0}
           />
         </div>

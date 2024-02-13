@@ -1,10 +1,10 @@
-'use client'
+"use client"
 
-import Checkbox from '../Checkbox'
-import FilterButton from '../FilterButton'
-import ReviewScore from '../ReviewScore'
-import Typography from '../Typography'
-import Icons from '../ui/Icons'
+import Checkbox from "../Checkbox"
+import FilterButton from "../FilterButton"
+import ReviewScore from "../ReviewScore"
+import Typography from "../Typography"
+import Icons from "../ui/Icons"
 
 import {
   filterConvenience,
@@ -12,7 +12,7 @@ import {
   filterScores,
   filterStars,
   filterTypes,
-} from './mock'
+} from "./mock"
 
 type FilterSectionProps = {
   children: React.ReactNode

@@ -1,12 +1,12 @@
-import { StoryObj } from '@storybook/react'
+import { StoryObj } from "@storybook/react"
 
-import TicketCard from '.'
-import { ticketsMock } from './mock'
+import TicketCard from "."
+import { ticketsMock } from "./mock"
 
 const meta = {
-  title: 'Components/TicketCard',
+  title: "Components/TicketCard",
   component: TicketCard,
-  tags: ['autodocs'],
+  tags: ["autodocs"],
 }
 
 export default meta

@@ -1,5 +1,5 @@
-import { ITicketDTO } from '@/api/DTOS/Ticket.DTO'
-import { createSlice, Dispatch, PayloadAction } from '@reduxjs/toolkit'
+import { ITicketDTO } from "@/api/DTOS/Ticket.DTO"
+import { createSlice, Dispatch, PayloadAction } from "@reduxjs/toolkit"
 
 export interface Icart {
   id: string
@@ -22,7 +22,7 @@ const initialState: CartState = {
 }
 
 const cartSlice = createSlice({
-  name: 'cart',
+  name: "cart",
   initialState,
   reducers: {
     addToCart(state, action: PayloadAction<Icart>) {
@@ -81,13 +81,13 @@ const cartSlice = createSlice({
   },
 })
 
-const key = '@just-travel/gh4/cart/'
+const key = "@just-travel/gh4/cart/"
 
 const saveToLocalStorage = (state: CartState) => {
   try {
     localStorage.setItem(key, JSON.stringify(state))
   } catch (error) {
-    console.error('Error saving cart to localStorage:', error)
+    console.error("Error saving cart to localStorage:", error)
   }
 }
 
@@ -96,7 +96,7 @@ export const getFromLocalStorage = () => {
     const cart = localStorage.getItem(key)
     return cart ? JSON.parse(cart) : []
   } catch (error) {
-    console.error('Error getting cart from localStorage:', error)
+    console.error("Error getting cart from localStorage:", error)
   }
 }
 
@@ -114,7 +114,7 @@ export const getLocalCart = () => async (dispatch: Dispatch) => {
 
     dispatch(setCart(cart))
   } catch (error) {
-    console.error('Error getting cart from localStorage:', error)
+    console.error("Error getting cart from localStorage:", error)
   }
 }
 

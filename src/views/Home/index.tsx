@@ -1,15 +1,15 @@
-'use client'
+"use client"
 
-import Empty from '@/components/Empty'
-import ErrorMessage from '@/components/ErrorMessage'
-import Filter from '@/components/Filter'
-import Pagination from '@/components/Pagination'
-import RenderIf from '@/components/RenderIf'
-import Search from '@/components/Search'
-import TicketCard from '@/components/TicketCard'
-import { useAppDispatch, useAppSelector } from '@/store'
-import { fetchTickets } from '@/store/reducers/tickets/ticketsSlice'
-import { useEffect } from 'react'
+import Empty from "@/components/Empty"
+import ErrorMessage from "@/components/ErrorMessage"
+import Filter from "@/components/Filter"
+import Pagination from "@/components/Pagination"
+import RenderIf from "@/components/RenderIf"
+import Search from "@/components/Search"
+import TicketCard from "@/components/TicketCard"
+import { useAppDispatch, useAppSelector } from "@/store"
+import { fetchTickets } from "@/store/reducers/tickets/ticketsSlice"
+import { useEffect } from "react"
 
 const Home = () => {
   const dispatch = useAppDispatch()
@@ -43,7 +43,7 @@ const Home = () => {
         <RenderIf condition={isError}>
           <div className='flex flex-col col-span-8 gap-6' aria-label='error'>
             <ErrorMessage
-              error={error || 'Erro ao buscar ingressos'}
+              error={error || "Erro ao buscar ingressos"}
               onClick={() => dispatch(fetchTickets())}
             />
           </div>
@@ -74,14 +74,14 @@ const Home = () => {
                 currency='R$'
                 description={ticket.location}
                 imageAlt={ticket.name}
-                imageSrc={ticket.image || ''}
+                imageSrc={ticket.image || ""}
                 price={ticket.price.full}
                 promotionalPrice={ticket.price.discount}
                 tag={{
                   reviewsCount: ticket?.rating?.reviewsCount || 0,
                   review: ticket?.rating?.value || 0,
                   label: `${ticket?.rating?.reviewsCount || 0} avaliações`,
-                  link: 'https://just-travel.com/avaliacoes',
+                  link: "https://just-travel.com/avaliacoes",
                 }}
               />
             ))}

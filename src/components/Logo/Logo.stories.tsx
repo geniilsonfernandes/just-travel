@@ -1,12 +1,12 @@
 /* c8 ignore start */
-import { StoryObj } from '@storybook/react'
+import { StoryObj } from "@storybook/react"
 
-import Logo from '.'
+import Logo from "."
 
 const meta = {
-  title: 'Components/Logo',
+  title: "Components/Logo",
   component: Logo,
-  tags: ['autodocs'],
+  tags: ["autodocs"],
 }
 
 export default meta

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState } from "react"
 
 interface PaginationProps {
   totalPages: number
@@ -15,7 +15,7 @@ const usePagination = ({
   sibling = 1,
   onPageChange,
   modeInfinite = false,
-  boundary = '...',
+  boundary = "...",
 }: PaginationProps) => {
   const [currentPage, setCurrentPage] = useState(initialPage)
 

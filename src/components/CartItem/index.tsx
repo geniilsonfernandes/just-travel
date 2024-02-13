@@ -1,7 +1,7 @@
-import { Icart } from '@/store/reducers/cart/cartSlice'
-import { formatPrice } from '@/utils'
-import Image from 'next/image'
-import Icons from '../ui/Icons'
+import { Icart } from "@/store/reducers/cart/cartSlice"
+import { formatPrice } from "@/utils"
+import Image from "next/image"
+import Icons from "../ui/Icons"
 
 type CartItemProps = {
   onRemoveCartItem: () => void

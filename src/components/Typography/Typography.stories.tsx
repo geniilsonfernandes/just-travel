@@ -1,12 +1,12 @@
 /* c8 ignore start */
-import { StoryObj } from '@storybook/react'
+import { StoryObj } from "@storybook/react"
 
-import Typography from '.'
+import Typography from "."
 
 const meta = {
-  title: 'UI/Typography',
+  title: "UI/Typography",
   component: Typography,
-  tags: ['autodocs'],
+  tags: ["autodocs"],
 }
 
 export default meta
@@ -15,8 +15,8 @@ type Story = StoryObj<typeof Typography>
 
 export const Default: Story = {
   args: {
-    children: 'Hello world',
-    size: 'headingMedium',
+    children: "Hello world",
+    size: "headingMedium",
   },
 }
 
@@ -29,15 +29,15 @@ Vivamus varius gravida urna viverra in. Aliquet amet dictum malesuada sapien mor
 export const Paragraph: Story = {
   args: {
     children: lorem,
-    size: 'paragraphSmall',
+    size: "paragraphSmall",
   },
 }
 
 export const Span: Story = {
   args: {
     children: lorem,
-    size: 'paragraphSmall',
-    as: 'span',
+    size: "paragraphSmall",
+    as: "span",
   },
 }
 
