@@ -58,7 +58,10 @@ const Pagination = ({
               '...'
             ) : (
               <button
-                onClick={() => handlePageChange(item as number)}
+                onClick={() => {
+                  onPageChange?.(item as number)
+                  handlePageChange(item as number)
+                }}
                 aria-label={`Go to page ${item}`}
                 role='button'
                 className={cn('w-6 h-6 font-book', {
