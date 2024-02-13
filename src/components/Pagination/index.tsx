@@ -20,7 +20,11 @@ const Pagination = ({
     totalPages: totalPages,
     initialPage: 1,
     sibling: 1,
-    onPageChange,
+    onPageChange: (page) => {
+      console.log(page)
+
+      onPageChange?.(page)
+    },
     modeInfinite: true,
   })
 

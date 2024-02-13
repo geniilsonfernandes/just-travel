@@ -15,9 +15,9 @@ describe('Empty', () => {
 
     expect(screen.getByText('Tente alterar os filtros')).toBeInTheDocument()
 
-    expect(screen.getByText('Tentar Novamente')).toBeInTheDocument()
+    expect(screen.getByText('Limpar filtros')).toBeInTheDocument()
 
-    fireEvent.click(screen.getByText('Tentar Novamente'))
+    fireEvent.click(screen.getByText('Limpar filtros'))
 
     expect(onClick).toHaveBeenCalled()
   })

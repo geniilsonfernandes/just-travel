@@ -10,7 +10,6 @@ describe('Pagination', () => {
   it('should render Pagination', () => {
     render(
       <Pagination
-        itemsPerPage={6}
         onItemsPerPageChange={onItemsPerPageChange}
         onPageChange={onPageChange}
         total={60}
@@ -23,7 +22,6 @@ describe('Pagination', () => {
   it('should call onPageChange when click next button', () => {
     render(
       <Pagination
-        itemsPerPage={6}
         onItemsPerPageChange={onItemsPerPageChange}
         onPageChange={onPageChange}
         total={60}
@@ -37,10 +35,9 @@ describe('Pagination', () => {
 
     expect(onPageChange).toBeCalledTimes(1)
   })
-  it('should call onPageChange when click any page', () => {
+  it('should call onPageChange when click to page 2', () => {
     render(
       <Pagination
-        itemsPerPage={6}
         onItemsPerPageChange={onItemsPerPageChange}
         onPageChange={onPageChange}
         total={60}
@@ -52,13 +49,12 @@ describe('Pagination', () => {
 
     fireEvent.click(pageTwo)
 
-    expect(onPageChange).toBeCalledTimes(1)
+    expect(onPageChange).toBeCalledWith(2)
   })
 
   it('should call onItemsPerPageChange when change', () => {
     render(
       <Pagination
-        itemsPerPage={6}
         onItemsPerPageChange={onItemsPerPageChange}
         onPageChange={onPageChange}
         total={60}

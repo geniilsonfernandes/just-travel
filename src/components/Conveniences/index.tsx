@@ -22,12 +22,14 @@ const Conveniences = ({
       )}
       {wifi && (
         <span className='flex items-center gap-1 text-xs font-book'>
-          <Icons.Wifi /> Wi-fi
+          <Icons.Wifi />
+          Wi-fi
         </span>
       )}
       {room && (
         <span className='flex items-center gap-1 text-xs font-book'>
-          <Icons.Wifi /> Wi-fi
+          <Icons.Room />
+          Quarto
         </span>
       )}
       {breakfast && (

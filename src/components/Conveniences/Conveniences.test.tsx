@@ -11,7 +11,7 @@ describe('Conveniences', () => {
 
     expect(screen.getByText('Wi-fi')).toBeInTheDocument()
     expect(screen.getByText('Passagem Aérea')).toBeInTheDocument()
-    expect(screen.getByText('Cafe da manha')).toBeInTheDocument()
+    expect(screen.getByText('Café de manhã')).toBeInTheDocument()
     expect(screen.getByText('Quarto')).toBeInTheDocument()
   })
   it('should render Conveniences and show only wifi', () => {
