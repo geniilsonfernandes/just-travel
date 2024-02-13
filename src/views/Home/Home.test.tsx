@@ -90,7 +90,6 @@ describe('Home page with loading', () => {
     const loading = screen.getByLabelText('loading')
 
     expect(fetchTickets).toBeCalledTimes(1)
-
     expect(loading).toBeInTheDocument()
   })
 
