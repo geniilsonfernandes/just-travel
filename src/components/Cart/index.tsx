@@ -77,6 +77,13 @@ const Cart = ({ cart, onRemoveCartItem }: CartProps) => {
           {formatPrice(total)}
         </div>
       </div>
+
+      <button
+        className='w-full h-14 rounded bg-brand-color-blue hover:bg-brand-color-blue/80 text-white mt-4 active:bg-brand-color-blue/30 active:scale-95'
+        onClick={() => onRemoveCartItem('3')}
+      >
+        Ir para o Checkout
+      </button>
     </div>
   )
 }

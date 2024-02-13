@@ -1,13 +1,12 @@
-import useClickOutside from '@/hooks/useClickOutside'
 import { Icart } from '@/store/reducers/cart/cartSlice'
 import { ShoppingCartSimple } from '@phosphor-icons/react'
 import { useState } from 'react'
 import Cart from '../Cart'
 
-// type ClikOutsideProps = React.HTMLAttributes<HTMLDivElement>
-// const ClikOutside = (props: ClikOutsideProps) => (
-//   <div className='fixed top-0 left-0 w-full h-full ' {...props} />
-// )
+type ClikOutsideProps = React.HTMLAttributes<HTMLDivElement>
+const ClikOutside = (props: ClikOutsideProps) => (
+  <div className='fixed top-0 left-0 w-full h-full z-50' {...props} />
+)
 
 type CartButtonProps = {
   cart: Icart[]
@@ -21,7 +20,7 @@ const CartButton = ({ cart = [], onRemoveCartItem }: CartButtonProps) => {
     setShow(!show)
   }
 
-  const ref = useClickOutside(show, handleTogle)
+  //   const ref = useClickOutside(show, handleTogle)
 
   return (
     <div className='relative'>
@@ -41,15 +40,22 @@ const CartButton = ({ cart = [], onRemoveCartItem }: CartButtonProps) => {
           {cart.length || 0}
         </div>
       </button>
-      {/* {show && <ClikOutside onClick={handleTogle} />} */}
+      {show && <ClikOutside onClick={handleTogle} aria-label='clik outside' />}
       {show && (
         <div
           className='absolute w-[494px] min-h-[250px] bg-white shadow-lg right-0 top-[80px] animate-fadeIn z-50'
-          ref={ref}
+          //   ref={ref}
           aria-label='Cart'
           role='dialog'
         >
-          <Cart cart={cart} onRemoveCartItem={onRemoveCartItem} />
+          <Cart
+            cart={cart}
+            onRemoveCartItem={(id) => {
+              console.log(id)
+
+              onRemoveCartItem(id)
+            }}
+          />
         </div>
       )}
     </div>
