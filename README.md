@@ -29,24 +29,47 @@ Para instalar o aplicativo, siga as instruções:
   </p>
   
   
-  ```
-  npm i
-
+```
+npm i
 npm run dev
-
 ```
 
 <p>
-O aplicativo estará disponível em http://localhost:3000/.
+O aplicativo estará disponível em http://localhost:3000/
 </p>
 
 
- <h2 id="documentação" align="center"> Storybook </h2>
- <p>
-    para visualizar os componentes do aplicativo, acesse https://just-travel-storybook.vercel.app/.
-  </p>
+<h2 id="documentação" align="center"> Storybook </h2>
+<p>
+   A documentação de todos os componentes do aplicativo foi feita com o Storybook. Você pode acessá-la através deste link: <a href="https://65cbede3c9638330bc52e843--dreamy-shortbread-14a8ff.netlify.app/?path=/docs/just-travel-storybook--docs">Storybook</a>
+</p>
 
+<p>
+Ou pode Execultar localmente
+</p>
 
+```
+npm run storybook
+```
+<p>
+O aplicativo estará disponível em http://localhost:6006/
+</p>
+
+<h2 id="documentação" align="center"> Testes Unitários </h2>
+
+<p>
+  Foram utilizados testes unitários com a biblioteca Vitest, abrangendo desde funções básicas de renderização condicional até funções mais complexas, como aquelas relacionadas à manipulação do carrinho. O objetivo foi alcançar a melhor cobertura possível durante os testes.
+</p>
+
+<p>
+  Para executar os testes, utilize os comandos abaixo:
+</p>
+
+```
+npm run test
+// ou
+npm run test:ui
+```
 
 
 <h2 align="center">Contato e redes sociais</h2>
