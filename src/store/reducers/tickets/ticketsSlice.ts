@@ -1,8 +1,8 @@
 import { ticketsAPI } from '@/api'
 import { ITicketDTO } from '@/api/DTOS/Ticket.DTO'
+import { TicketSchema } from '@/shared/validate'
 import { createSlice, Dispatch, PayloadAction } from '@reduxjs/toolkit'
 import { AxiosError } from 'axios'
-import { z } from 'zod'
 
 interface TicketsState {
   data: ITicketDTO[]
@@ -57,24 +57,6 @@ export const {
   changeMeta,
 } = ticketsSlice.actions
 
-const TicketSchema = z.object({
-  id: z.string(),
-  name: z.string(),
-  location: z.string(),
-  image: z.string(),
-  description: z.string(),
-  price: z.object({
-    full: z.number(),
-    discount: z.number(),
-  }),
-  rating: z.object({
-    reviewsCount: z.number(),
-    value: z.number(),
-  }),
-  createdAt: z.string(),
-  updatedAt: z.string(),
-})
-
 const CACHE_KEY = 'ticketsCache'
 
 const getCache = (): {
@@ -98,7 +80,7 @@ export const fetchTickets =
       const cacheKey = JSON.stringify(params)
       const cachedData = cache[cacheKey]
 
-      if (cachedData && Date.now() - cachedData.timestamp < 5 * 60 * 1000) {
+      if (cachedData && Date.now() - cachedData.timestamp < 60 * 1000) {
         const validatedData = cachedData.data.filter((ticket) => {
           try {
             TicketSchema.parse(ticket)
@@ -114,6 +96,11 @@ export const fetchTickets =
       dispatch(getTicketsStart())
       changeMeta({ page: params.page, limit: params.limit })
       const response = await ticketsAPI.getTickets(params)
+
+      if (response.length === 0) {
+        dispatch(getTicketsSuccess([]))
+        return
+      }
 
       const validatedData = response.filter((ticket) => {
         try {
