@@ -321,6 +321,231 @@ const Heart = ({ fill }: { fill?: boolean }) => (
     />
   </svg>
 )
+const ArrowLeft = () => (
+  <svg
+    width='14'
+    height='16'
+    viewBox='0 0 14 16'
+    fill='none'
+    xmlns='http://www.w3.org/2000/svg'
+  >
+    <path
+      d='M13 10.076V10C13 6.686 10.314 4 7 4H5.581H1'
+      stroke='currentColor'
+      strokeWidth='1.5'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    />
+    <path
+      d='M13 10.08V15'
+      stroke='currentColor'
+      strokeWidth='1.5'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    />
+    <path
+      d='M4 7L1 4L4 1'
+      stroke='currentColor'
+      strokeWidth='1.5'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    />
+  </svg>
+)
+
+const TravelAirplane = () => (
+  <svg
+    width='18'
+    height='18'
+    viewBox='0 0 18 18'
+    fill='none'
+    xmlns='http://www.w3.org/2000/svg'
+  >
+    <path
+      fillRule='evenodd'
+      clipRule='evenodd'
+      d='M16.5 4.875C16.5 4.04657 15.8284 3.375 15 3.375H13.5C13.3043 3.38326 13.1363 3.51691 13.0843 3.70575C12.9314 4.33831 12.3653 4.78393 11.7145 4.78392C11.0637 4.7839 10.4976 4.33827 10.3448 3.7057C10.2928 3.51688 10.1248 3.38325 9.9291 3.375H3C2.17157 3.375 1.5 4.04657 1.5 4.875V13.125C1.5 13.9534 2.17157 14.625 3 14.625H9.9291C10.1248 14.6167 10.2927 14.4831 10.3448 14.2943C10.4976 13.6617 11.0637 13.2161 11.7145 13.2161C12.3653 13.2161 12.9314 13.6617 13.0843 14.2943C13.1363 14.4831 13.3043 14.6167 13.5 14.625H15C15.8284 14.625 16.5 13.9534 16.5 13.125V4.875Z'
+      stroke='currentColor'
+      strokeWidth='1.5'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    />
+    <path
+      d='M4.49999 9.75L5.16749 9.0195L4.49999 8.25'
+      stroke="currentColor'"
+      strokeWidth='1.5'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    />
+    <path
+      d='M6 10.875L7.55375 9.01625L6 7.125'
+      stroke='currentColor'
+      strokeWidth='1.5'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    />
+    <path
+      d='M5.16748 9.02251L8.99998 9.00001'
+      stroke='currentColor'
+      strokeWidth='1.5'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    />
+    <path
+      d='M11.625 11.4375V11.0625'
+      stroke='currentColor'
+      strokeWidth='1.5'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    />
+    <path
+      d='M11.625 9.1875V8.8125'
+      stroke='currentColor'
+      strokeWidth='1.5'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    />
+    <path
+      d='M11.625 6.9375V6.5625'
+      stroke='currentColor'
+      strokeWidth='1.5'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    />
+  </svg>
+)
+const Wifi = () => (
+  <svg
+    width='18'
+    height='18'
+    viewBox='0 0 18 18'
+    fill='none'
+    xmlns='http://www.w3.org/2000/svg'
+  >
+    <path
+      d='M8.99925 14.4375C8.844 14.4375 8.718 14.5635 8.7195 14.7188C8.71875 14.874 8.84475 15 9 15C9.15525 15 9.28125 14.874 9.28125 14.7188C9.28125 14.5635 9.15525 14.4375 8.99925 14.4375'
+      stroke='currentColor'
+      strokeWidth='1.5'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    />
+    <path
+      d='M3.44324 9.00001C6.51224 6.18526 11.487 6.18526 14.556 9.00001'
+      stroke='currentColor'
+      strokeWidth='1.5'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    />
+    <path
+      d='M1.19556 5.853C5.50581 2.049 12.4943 2.049 16.8046 5.853'
+      stroke='currentColor'
+      strokeWidth='1.5'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    />
+    <path
+      d='M5.6842 11.8658C7.51495 10.0447 10.4842 10.0447 12.315 11.8658'
+      stroke='currentColor'
+      strokeWidth='1.5'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    />
+  </svg>
+)
+
+const Breakfast = () => (
+  <svg
+    width='18'
+    height='18'
+    viewBox='0 0 18 18'
+    fill='none'
+    xmlns='http://www.w3.org/2000/svg'
+  >
+    <path
+      fillRule='evenodd'
+      clipRule='evenodd'
+      d='M2.9975 7.87454H12.0013C12.4156 7.87454 12.7516 8.21047 12.7516 8.62485V10.8758C12.7516 13.3621 10.736 15.3777 8.24969 15.3777H6.74907C4.26275 15.3777 2.24719 13.3621 2.24719 10.8758V8.62485C2.24719 8.21047 2.58312 7.87454 2.9975 7.87454Z'
+      stroke='currentColor'
+      strokeWidth='1.5'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    />
+    <path
+      d='M10.1254 5.6236C9.62519 5.09838 9.62519 4.27304 10.1254 3.74782C10.6256 3.2226 10.6256 2.39726 10.1254 1.87204'
+      stroke='currentColor'
+      strokeWidth='1.5'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    />
+    <path
+      d='M7.4993 5.6236C6.9991 5.09838 6.9991 4.27304 7.4993 3.74782C7.99951 3.2226 7.99951 2.39726 7.4993 1.87204'
+      stroke='currentColor'
+      strokeWidth='1.5'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    />
+    <path
+      d='M4.8732 5.6236C4.37299 5.09839 4.37299 4.27304 4.8732 3.74782C5.37341 3.2226 5.37341 2.39726 4.8732 1.87204'
+      stroke='currentColor'
+      strokeWidth='1.5'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    />
+    <path
+      d='M12.0971 13.213L13.4821 12.896C14.8107 12.592 15.7528 11.41 15.7528 10.047V10.047C15.7528 9.4708 15.5239 8.91824 15.1165 8.51083C14.7091 8.10342 14.1566 7.87454 13.5804 7.87454H11.6261'
+      stroke='currentColor'
+      strokeWidth='1.5'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    />
+  </svg>
+)
+
+const Room = () => (
+  <svg
+    width='18'
+    height='18'
+    viewBox='0 0 18 18'
+    fill='none'
+    xmlns='http://www.w3.org/2000/svg'
+  >
+    <path
+      d='M2.24719 8.77162L8.20096 3.66827C8.66076 3.27415 9.33925 3.27415 9.79905 3.66827L15.7528 8.77162'
+      stroke='currentColor'
+      strokeWidth='1.5'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    />
+    <path
+      d='M15.0025 15.7528V3.37265C15.0025 3.16546 14.8345 2.9975 14.6273 2.9975H12.3764C12.1692 2.9975 12.0012 3.16546 12.0012 3.37265V5.32797'
+      stroke='currentColor'
+      strokeWidth='1.5'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    />
+    <path
+      d='M7.15833 15.7528V11.6261C7.15833 11.2117 7.49425 10.8758 7.90864 10.8758H10.0914C10.5058 10.8758 10.8417 11.2117 10.8417 11.6261V15.7528'
+      stroke='currentColor'
+      strokeWidth='1.5'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    />
+    <path
+      d='M3.2117 7.94485V15.7528'
+      stroke='currentColor'
+      strokeWidth='1.5'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    />
+    <path
+      d='M15.7528 15.7528H2.24719'
+      stroke='currentColor'
+      strokeWidth='1.5'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    />
+  </svg>
+)
 
 export default {
   Star,
@@ -330,4 +555,9 @@ export default {
   Check,
   ArrowRight,
   Heart,
+  ArrowLeft,
+  TravelAirplane,
+  Wifi,
+  Breakfast,
+  Room,
 }
