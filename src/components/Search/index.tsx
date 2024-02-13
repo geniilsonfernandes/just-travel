@@ -28,6 +28,8 @@ const Search = () => {
           />
           <button
             className='h-full w-12 flex items-center justify-center border-l border-gray-10 hover:bg-gray-10'
+            type='submit'
+            aria-label='search button'
             onClick={handleSearch}
           >
             <MagnifyingGlass size={21} className='text-gray-300 ' />

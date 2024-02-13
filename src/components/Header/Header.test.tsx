@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react'
-import { describe, expect, it, vi } from 'vitest'
+import { beforeAll, describe, expect, it, vi } from 'vitest'
 
 import Header from '.'
 
@@ -12,6 +12,25 @@ vi.mock('../ExchangeRate', () => ({
 }))
 
 describe('Header rendering', () => {
+  beforeAll(() => {
+    vi.mock('@/store', () => ({
+      useAppDispatch: vi.fn().mockReturnValue(vi.fn()),
+      useAppSelector: vi.fn((selector) =>
+        selector({
+          tickets: {
+            data: [],
+            isLoading: true,
+            isError: false,
+            isEmpty: false,
+          },
+          cart: {
+            items: [],
+          },
+        })
+      ),
+    }))
+  })
+
   it('should render Header correctly', () => {
     render(<Header />)
 

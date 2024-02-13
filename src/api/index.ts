@@ -29,8 +29,6 @@ export const ticketsAPI: ITicketsAPI = {
       { params }
     )
 
-    console.log(response.data)
-
     return response.data || []
   },
 

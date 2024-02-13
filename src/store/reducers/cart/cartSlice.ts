@@ -1,7 +1,7 @@
 import { ITicketDTO } from '@/api/DTOS/Ticket.DTO'
 import { createSlice, Dispatch, PayloadAction } from '@reduxjs/toolkit'
 
-interface Ticket {
+export interface Icart {
   id: string
   name: string
   price: number
@@ -10,18 +10,22 @@ interface Ticket {
 }
 
 interface CartState {
-  items: Ticket[]
+  items: Icart[]
+
+  isOpen: boolean
 }
 
 const initialState: CartState = {
   items: [],
+
+  isOpen: false,
 }
 
 const cartSlice = createSlice({
   name: 'cart',
   initialState,
   reducers: {
-    addToCart(state, action: PayloadAction<Ticket>) {
+    addToCart(state, action: PayloadAction<Icart>) {
       const { id, name, price, ticket } = action.payload
       const existingItemIndex = state.items.findIndex((item) => item.id === id)
 
@@ -100,7 +104,6 @@ export const {
 export const getLocalCart = () => async (dispatch: Dispatch) => {
   try {
     const cart = getFromLocalStorage()
-    console.log(cart)
 
     dispatch(setCart(cart))
   } catch (error) {

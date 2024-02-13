@@ -1,7 +1,7 @@
 'use client'
 
 import { useAppDispatch, useAppSelector } from '@/store'
-import { getLocalCart } from '@/store/reducers/cart/cartSlice'
+import { getLocalCart, removeFromCart } from '@/store/reducers/cart/cartSlice'
 import { User } from '@phosphor-icons/react'
 import { useEffect } from 'react'
 import Button from '../Button'
@@ -13,9 +13,14 @@ const Header = () => {
   const { items } = useAppSelector((state) => state.cart)
   const dispatch = useAppDispatch()
 
+  const handleRemoveItemToCart = (id: string) => {
+    dispatch(removeFromCart(id))
+  }
+
   useEffect(() => {
     dispatch(getLocalCart())
   }, [])
+
   return (
     <nav className='border-b-[1px] border-gray-10 bg-white' aria-label='Header'>
       <div className='flex items-center justify-between py-6 container px-6 sm:px-0'>
@@ -33,7 +38,11 @@ const Header = () => {
             >
               Entrar
             </Button>
-            <CartButton cartItems={items.length} />
+            <CartButton
+              cartItems={items.length}
+              cart={items}
+              onRemoveCartItem={handleRemoveItemToCart}
+            />
           </div>
         </div>
       </div>

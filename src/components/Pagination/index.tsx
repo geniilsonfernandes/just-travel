@@ -21,8 +21,6 @@ const Pagination = ({
     initialPage: 1,
     sibling: 1,
     onPageChange: (page) => {
-      console.log(page)
-
       onPageChange?.(page)
     },
     modeInfinite: true,

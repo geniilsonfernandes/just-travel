@@ -1,7 +1,8 @@
 import useClickOutside from '@/hooks/useClickOutside'
+import { Icart } from '@/store/reducers/cart/cartSlice'
 import { ShoppingCartSimple } from '@phosphor-icons/react'
 import { useState } from 'react'
-import Typography from '../Typography'
+import Cart from '../Cart'
 
 // type ClikOutsideProps = React.HTMLAttributes<HTMLDivElement>
 // const ClikOutside = (props: ClikOutsideProps) => (
@@ -10,9 +11,15 @@ import Typography from '../Typography'
 
 type CartButtonProps = {
   cartItems: number
+  cart: Icart[]
+  onRemoveCartItem: (id: string) => void
 }
 
-const CartButton = ({ cartItems = 0 }: CartButtonProps) => {
+const CartButton = ({
+  cartItems = 0,
+  cart,
+  onRemoveCartItem,
+}: CartButtonProps) => {
   const [show, setShow] = useState(false)
 
   const handleTogle = () => {
@@ -42,14 +49,12 @@ const CartButton = ({ cartItems = 0 }: CartButtonProps) => {
       {/* {show && <ClikOutside onClick={handleTogle} />} */}
       {show && (
         <div
-          className='absolute w-[494px] h-[250px] bg-white shadow-lg right-0 top-[80px] animate-fadeIn'
+          className='absolute w-[494px] min-h-[250px] bg-white shadow-lg right-0 top-[80px] animate-fadeIn z-50'
           ref={ref}
           aria-label='Cart'
           role='dialog'
         >
-          <Typography as='span' size='paragraphSmall' className='text-black'>
-            cart
-          </Typography>
+          <Cart cart={cart} onRemoveCartItem={onRemoveCartItem} />
         </div>
       )}
     </div>

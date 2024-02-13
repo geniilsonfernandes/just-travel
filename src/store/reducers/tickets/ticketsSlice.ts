@@ -131,8 +131,6 @@ export const fetchTickets =
     } catch (error) {
       changeMeta({ page: 1, limit: 6 })
       if (error instanceof AxiosError) {
-        console.log(error.response?.data)
-
         dispatch(getTicketsFailure(error.response?.data.message))
       }
       dispatch(getTicketsFailure('Error ao buscar dados do servidor'))

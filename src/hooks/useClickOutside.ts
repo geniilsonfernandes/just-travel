@@ -11,8 +11,6 @@ const useClickOutside = (isOpen: boolean, callback: () => void) => {
 
   useEffect(() => {
     if (isOpen) {
-      console.log('isOpen', isOpen)
-
       document.addEventListener('click', handleClickOutside)
     }
 

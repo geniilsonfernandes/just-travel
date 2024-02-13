@@ -138,11 +138,7 @@ const Ticket = ({ data }: TicketProps) => {
                 Valor Total
               </Typography>
 
-              <PriceTicket
-                price={data.price.full}
-                promotionalPrice={data.price.discount}
-                currency='R$'
-              />
+              <PriceTicket price={data.price.full} currency='R$' />
             </div>
             <button
               className='w-full h-14 rounded bg-brand-color-blue hover:bg-brand-color-blue/80 text-white mt-4 active:bg-brand-color-blue/30 active:scale-95'
