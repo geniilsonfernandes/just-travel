@@ -57,3 +57,16 @@ export const fetchTickets =
       dispatch(getTicketsFailure('Error ao buscar dados do servidor'))
     }
   }
+
+export const searchTickets = (query: string) => async (dispatch: Dispatch) => {
+  try {
+    dispatch(getTicketsStart())
+    const response = await ticketsAPI.searchTickets(query)
+    dispatch(getTicketsSuccess(response))
+  } catch (error) {
+    if (error instanceof AxiosError) {
+      dispatch(getTicketsFailure(error.response?.data.message))
+    }
+    dispatch(getTicketsFailure('Error ao buscar dados do servidor'))
+  }
+}
