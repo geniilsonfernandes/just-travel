@@ -7,12 +7,10 @@ type PaginationProps = {
   onPageChange?: (page: number) => void
   onItemsPerPageChange?: (itemsPerPage: number) => void
   totalPages?: number
-  itemsPerPage?: number
   total?: number
 }
 
 const Pagination = ({
-  itemsPerPage = 6,
   onItemsPerPageChange,
   onPageChange,
   totalPages = 10,
@@ -23,6 +21,7 @@ const Pagination = ({
     initialPage: 1,
     sibling: 1,
     onPageChange,
+    modeInfinite: true,
   })
 
   const { range, currentPage, handlePageChange, nextPage, prevPage } =
@@ -34,9 +33,11 @@ const Pagination = ({
       <div className='flex items-center gap-2'>
         <span className='text-info font-bold text-xs'>Por página</span>
         <select
-          value={itemsPerPage}
           aria-label='Items per page'
-          onChange={(e) => onItemsPerPageChange?.(Number(e.target.value))}
+          onChange={(e) => {
+            onItemsPerPageChange?.(Number(e.target.value))
+            handlePageChange(1)
+          }}
           className='text-info border border-brand-color-blue rounded w-14 text-xs h-6'
         >
           {[6, 12, 20].map((item, index) => (
