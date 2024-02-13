@@ -1,6 +1,5 @@
 /* c8 ignore start */
 
-
 import { Providers } from '@/providers'
 import Search from '.'
 
