@@ -2,10 +2,7 @@ import { render, screen } from '@testing-library/react'
 import { beforeAll, describe, expect, it, vi } from 'vitest'
 
 import Header from '.'
-
-vi.mock('../CartButton', () => ({
-  default: () => <div data-testid='Cart button'>Cart button</div>,
-}))
+import { cartMock } from '../Cart/mock'
 
 vi.mock('../ExchangeRate', () => ({
   default: () => <div data-testid='ExchangeRate'>ExchangeRate</div>,
@@ -24,7 +21,7 @@ describe('Header rendering', () => {
             isEmpty: false,
           },
           cart: {
-            items: [],
+            items: cartMock,
           },
         })
       ),
@@ -35,7 +32,12 @@ describe('Header rendering', () => {
     render(<Header />)
 
     expect(screen.getByLabelText('Header')).toBeTruthy()
-    expect(screen.getByTestId('Cart button')).toBeTruthy()
     expect(screen.getByTestId('ExchangeRate')).toBeTruthy()
+  })
+
+  it('should render 2 items in cart', () => {
+    render(<Header />)
+
+    expect(screen.getByLabelText('Cart quantity')).toHaveTextContent('2')
   })
 })

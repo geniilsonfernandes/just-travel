@@ -13,5 +13,15 @@ export default meta
 type Story = StoryObj<typeof PriceTicket>
 
 export const Default: Story = {
-  args: {},
+  args: {
+    price: 100,
+  },
+}
+
+export const WithoutPromotionalPrice: Story = {
+  args: {
+    currency: 'R$',
+    price: 100,
+    promotionalPrice: 50,
+  },
 }

@@ -10,16 +10,11 @@ import Cart from '../Cart'
 // )
 
 type CartButtonProps = {
-  cartItems: number
   cart: Icart[]
   onRemoveCartItem: (id: string) => void
 }
 
-const CartButton = ({
-  cartItems = 0,
-  cart,
-  onRemoveCartItem,
-}: CartButtonProps) => {
+const CartButton = ({ cart = [], onRemoveCartItem }: CartButtonProps) => {
   const [show, setShow] = useState(false)
 
   const handleTogle = () => {
@@ -43,7 +38,7 @@ const CartButton = ({
           className='h-[32px] min-w-[32px] px-1 bg-white/25 rounded-full flex items-center justify-center font-medium text-white'
           aria-label='Cart quantity'
         >
-          {cartItems}
+          {cart.length || 0}
         </div>
       </button>
       {/* {show && <ClikOutside onClick={handleTogle} />} */}

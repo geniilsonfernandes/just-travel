@@ -2,6 +2,7 @@
 import { StoryObj } from '@storybook/react'
 
 import CartButton from '.'
+import { cartMock } from '../Cart/mock'
 
 const meta = {
   title: 'Components/CartButton',
@@ -19,5 +20,7 @@ export default meta
 type Story = StoryObj<typeof CartButton>
 
 export const Default: Story = {
-  args: {},
+  args: {
+    cart: cartMock,
+  },
 }

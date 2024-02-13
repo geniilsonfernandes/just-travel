@@ -1,7 +1,7 @@
 /* c8 ignore start */
 
-import { StoryObj } from '@storybook/react'
 
+import { Providers } from '@/providers'
 import Search from '.'
 
 const meta = {
@@ -12,8 +12,10 @@ const meta = {
 
 export default meta
 
-type Story = StoryObj<typeof Search>
-
-export const Default: Story = {
-  args: {},
+export const Default = () => {
+  return (
+    <Providers>
+      <Search />
+    </Providers>
+  )
 }

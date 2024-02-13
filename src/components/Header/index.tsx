@@ -39,7 +39,6 @@ const Header = () => {
               Entrar
             </Button>
             <CartButton
-              cartItems={items.length}
               cart={items}
               onRemoveCartItem={handleRemoveItemToCart}
             />

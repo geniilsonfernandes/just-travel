@@ -15,5 +15,10 @@ export default meta
 type Story = StoryObj<typeof ReviewTag>
 
 export const Default: Story = {
-  args: {},
+  args: {
+    label: '5.0',
+    link: '/',
+    reviewsCount: 1,
+    review: 5,
+  },
 }
