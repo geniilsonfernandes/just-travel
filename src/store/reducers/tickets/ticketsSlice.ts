@@ -146,11 +146,19 @@ export const searchTickets = (search: string) => async (dispatch: Dispatch) => {
       search,
     })
 
+    const validatedData = response.filter((ticket) => {
+      try {
+        TicketSchema.parse(ticket)
+        return true
+      } catch {
+        return false
+      }
+    })
+
     if (response.length === 0) {
       dispatch(getTicketsSuccess([]))
     }
-
-    dispatch(getTicketsSuccess(response))
+    dispatch(getTicketsSuccess(validatedData))
   } catch (error) {
     dispatch(getTicketsSuccess([]))
   }

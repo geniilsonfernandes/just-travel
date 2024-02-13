@@ -18,14 +18,22 @@ const Search = () => {
           <button className='h-full w-12 flex items-center justify-center'>
             <MapPin size={21} className='text-brand-color-blue' />
           </button>
-          <input
-            type='text'
-            name='Search input'
-            placeholder='Busque por atração'
-            className='w-full h-full placeholder:text-gray-300 placeholder:text-sm bg-transparent outline-none text-gray-500'
-            onChange={(e) => setSearchValue(e.target.value)}
-            value={searchValue}
-          />
+          <form
+            onSubmit={(e) => {
+              e.preventDefault()
+              handleSearch()
+            }}
+            className='w-full h-full'
+          >
+            <input
+              type='text'
+              name='Search input'
+              placeholder='Busque por atração'
+              className='w-full h-full placeholder:text-gray-300 placeholder:text-sm bg-transparent outline-none text-gray-500'
+              onChange={(e) => setSearchValue(e.target.value)}
+              value={searchValue}
+            />
+          </form>
           <button
             className='h-full w-12 flex items-center justify-center border-l border-gray-10 hover:bg-gray-10'
             type='submit'
