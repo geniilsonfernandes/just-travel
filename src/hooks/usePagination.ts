@@ -6,6 +6,7 @@ interface PaginationProps {
   boundary?: string
   sibling?: number
   onPageChange?: (page: number) => void
+  modeInfinite?: boolean
 }
 
 const usePagination = ({
@@ -13,12 +14,32 @@ const usePagination = ({
   initialPage,
   sibling = 1,
   onPageChange,
+  modeInfinite = false,
   boundary = '...',
 }: PaginationProps) => {
   const [currentPage, setCurrentPage] = useState(initialPage)
 
   const calculateRange = () => {
     const range = []
+
+    if (modeInfinite) {
+      if (currentPage <= 3) {
+        for (let i = 1; i <= 5; i++) {
+          range.push(i)
+        }
+      }
+
+      if (currentPage > 3) {
+        range.push(1)
+
+        range.push(boundary)
+        range.push(currentPage - 1)
+        range.push(currentPage)
+        range.push(currentPage + 1)
+      }
+
+      return range
+    }
 
     if (totalPages <= 5) {
       for (let i = 1; i <= totalPages; i++) {
@@ -88,6 +109,11 @@ const usePagination = ({
   }
 
   const nextPage = () => {
+    if (modeInfinite) {
+      onPageChange?.(currentPage + 1)
+      setCurrentPage(currentPage + 1)
+      return
+    }
     if (currentPage < totalPages) {
       // Verifica se é possível avançar
       onPageChange?.(currentPage + 1)
