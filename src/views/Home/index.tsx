@@ -64,7 +64,7 @@ const Home = () => {
         </RenderIf>
 
         <RenderIf condition={!isError && !isLoading && !isEmpty}>
-          <div className='flex flex-col col-span-12 sm:col-span-8 gap-6 '>
+          <div className='flex flex-col col-span-12 sm:col-span-12 md:col-span-8 gap-6 '>
             {data.map((ticket, i) => (
               <TicketCard
                 key={ticket.id + i}

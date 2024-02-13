@@ -33,8 +33,8 @@ const Ticket = ({ data }: TicketProps) => {
     )
   }
   return (
-    <div className='container py-9 h-full'>
-      <div className='flex gap-2'>
+    <div className='container py-9 h-full '>
+      <div className='flex gap-2 px-6 sm:px-0'>
         <Link href={'/'} passHref>
           <button className='flex items-center justify-center w-8 h-8 text-brand-color-black '>
             <Icons.ArrowLeft />
@@ -55,15 +55,15 @@ const Ticket = ({ data }: TicketProps) => {
           </div>
         </div>
       </div>
-      <div className='relative sm:h-[300px] md:h-[400px] my-6'>
+      <div className='relative w-full h-[200px] sm:h-[300px] md:h-[400px] my-6'>
         <button className='absolute top-0 right-0 m-4 p-2 bg-white z-10 font-bold text-brand-color-blue rounded-md'>
           Visualizar mais fotos
         </button>
         <Image src={data.image} alt={data.name} fill className='object-cover' />
       </div>
 
-      <div className='grid grid-cols-12 gap-4 '>
-        <div className='col-span-8 flex flex-col gap-4'>
+      <div className='grid grid-cols-12  gap-4 px-6 sm:px-0'>
+        <div className='col-span-12 sm:col-span-8 flex flex-col gap-4 '>
           <ReviewTag
             label='Avaliação geral'
             review={data.rating.value}
@@ -105,7 +105,7 @@ const Ticket = ({ data }: TicketProps) => {
             <div className='h-[300px] w-full bg-slate-200 mt-4' />
           </div>
         </div>
-        <div className='col-span-4'>
+        <div className='col-span-12 sm:col-span-4'>
           <div className='w-full rounded bg-white shadow-sm p-6'>
             <TicketOption
               icon={<Icons.Calendar />}

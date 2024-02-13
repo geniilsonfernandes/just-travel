@@ -45,11 +45,17 @@ const Filter = () => {
           Filtro
         </Typography>
 
-        <button className='px-2 py-1 hover:bg-brand-color-blue/15 rounded'>
-          <Typography size='paragraphNormal' color='brandBlue'>
-            Limpar todos os filtros
-          </Typography>
-        </button>
+        <div className='flex items-center justify-center gap-2'>
+          <button className='px-2 py-1 hover:bg-brand-color-blue/15 rounded'>
+            <Typography size='paragraphNormal' color='brandBlue'>
+              Limpar todos os filtros
+            </Typography>
+          </button>
+
+          <button className='text-gray-900 w-6 h-6 sm:hidden hover:bg-brand-color-blue/15 rounded flex items-center justify-center'>
+            <Icons.CaretDown />
+          </button>
+        </div>
       </div>
       <div className='h-[1px] bg-gray-10 w-full mb-6 mt-4' />
       <div>
