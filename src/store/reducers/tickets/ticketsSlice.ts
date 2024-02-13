@@ -6,8 +6,10 @@ import { AxiosError } from 'axios'
 
 interface TicketsState {
   data: ITicketDTO[]
-  loading: boolean
   error: string | null
+  isLoading: boolean
+  isError: boolean
+  isEmpty: boolean
 
   //   meta
   currentPage: number
@@ -17,9 +19,10 @@ interface TicketsState {
 
 const initialState: TicketsState = {
   data: [],
-  loading: false,
+  isLoading: false,
   error: null,
-
+  isError: false,
+  isEmpty: false,
   //   meta
   currentPage: 1,
   totalPages: 1,
@@ -31,16 +34,22 @@ const ticketsSlice = createSlice({
   initialState,
   reducers: {
     getTicketsStart(state) {
-      state.loading = true
+      state.isLoading = true
       state.error = null
+      state.isError = false
+      state.isEmpty = false
     },
     getTicketsSuccess(state, action: PayloadAction<ITicketDTO[]>) {
-      state.loading = false
+      state.isLoading = false
       state.data = action.payload
+      state.isError = false
+      state.isEmpty = action.payload.length === 0
     },
     getTicketsFailure(state, action: PayloadAction<string>) {
-      state.loading = false
+      state.isLoading = false
       state.error = action.payload
+      state.isError = true
+      state.isEmpty = false
     },
 
     changeMeta(state, action: PayloadAction<{ page: number; limit: number }>) {

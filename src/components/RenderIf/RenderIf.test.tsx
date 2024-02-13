@@ -7,12 +7,12 @@ describe('RenderIf', () => {
   it('should render RenderIf', () => {
     render(<RenderIf condition={true}>foo</RenderIf>)
 
-    expect(screen.getByText('RenderIf')).toBeTruthy()
+    expect(screen.getByText('foo')).toBeTruthy()
   })
 
   it('should not render RenderIf', () => {
     render(<RenderIf condition={false}>foo</RenderIf>)
 
-    expect(screen.queryByText('RenderIf')).toBeNull()
+    expect(screen.queryByText('foo')).not.toBeInTheDocument()
   })
 })
