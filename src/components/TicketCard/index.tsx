@@ -1,3 +1,5 @@
+'use client'
+
 import { MapPin } from '@phosphor-icons/react/dist/ssr'
 import Image from 'next/image'
 import PriceTicket from '../PriceTicket'
