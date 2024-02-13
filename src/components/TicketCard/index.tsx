@@ -59,8 +59,10 @@ const TicketCard = ({
               {title}
             </Typography>
 
-            <div className='flex items-center gap-1 '>
-              <MapPin size={21} className='text-brand-color-blue' />
+            <div className='flex items-start gap-4 pr-4  '>
+              <div className='w-4'>
+                <MapPin size={21} className='text-brand-color-blue' />
+              </div>
               <Typography size='paragraphSmall' as='p' color={'information'}>
                 {description}
               </Typography>
