@@ -1,3 +1,5 @@
+'use client'
+
 import { ITicketDTO } from '@/api/DTOS/Ticket.DTO'
 import Conveniences from '@/components/Conveniences'
 import PriceTicket from '@/components/PriceTicket'
@@ -6,6 +8,8 @@ import TicketInformation from '@/components/TicketInformation'
 import TicketOption from '@/components/TicketOption'
 import Typography from '@/components/Typography'
 import Icons from '@/components/ui/Icons'
+import { useAppDispatch } from '@/store'
+import { addToCart } from '@/store/reducers/cart/cartSlice'
 import { MapPin } from '@phosphor-icons/react/dist/ssr'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -15,6 +19,19 @@ type TicketProps = {
 }
 
 const Ticket = ({ data }: TicketProps) => {
+  const dispatch = useAppDispatch()
+
+  const handleAdd = () => {
+    dispatch(
+      addToCart({
+        id: data.id,
+        name: data.name,
+        price: data.price.full,
+        quantity: 1,
+        ticket: data,
+      })
+    )
+  }
   return (
     <div className='container py-9 h-full'>
       <div className='flex gap-2'>
@@ -127,7 +144,10 @@ const Ticket = ({ data }: TicketProps) => {
                 currency='R$'
               />
             </div>
-            <button className='w-full h-14 rounded bg-brand-color-blue hover:bg-brand-color-blue/80 text-white mt-4'>
+            <button
+              className='w-full h-14 rounded bg-brand-color-blue hover:bg-brand-color-blue/80 text-white mt-4 active:bg-brand-color-blue/30 active:scale-95'
+              onClick={handleAdd}
+            >
               Comprar Ingresso
             </button>
           </div>

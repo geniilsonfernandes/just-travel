@@ -15,6 +15,9 @@ interface TicketsState {
   currentPage: number
   totalPages: number
   ItemsPerPage: number
+
+  //   search
+  search: string
 }
 
 const initialState: TicketsState = {
@@ -27,6 +30,8 @@ const initialState: TicketsState = {
   currentPage: 1,
   totalPages: 1,
   ItemsPerPage: 6,
+  //
+  search: '',
 }
 
 const ticketsSlice = createSlice({
@@ -126,10 +131,31 @@ export const fetchTickets =
     } catch (error) {
       changeMeta({ page: 1, limit: 6 })
       if (error instanceof AxiosError) {
+        console.log(error.response?.data)
+
         dispatch(getTicketsFailure(error.response?.data.message))
       }
       dispatch(getTicketsFailure('Error ao buscar dados do servidor'))
     }
   }
+
+export const searchTickets = (search: string) => async (dispatch: Dispatch) => {
+  try {
+    dispatch(getTicketsStart())
+    const response = await ticketsAPI.searchTickets({
+      page: 1,
+      limit: 6,
+      search,
+    })
+
+    if (response.length === 0) {
+      dispatch(getTicketsSuccess([]))
+    }
+
+    dispatch(getTicketsSuccess(response))
+  } catch (error) {
+    dispatch(getTicketsSuccess([]))
+  }
+}
 
 export default ticketsSlice.reducer

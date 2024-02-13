@@ -9,7 +9,11 @@ const axiosInstance = axios.create({
 
 export interface ITicketsAPI {
   getTickets(params: { page: number; limit: number }): Promise<ITicketDTO[]>
-  searchTickets(query: string): Promise<ITicketDTO[]>
+  searchTickets(params: {
+    page: number
+    limit: number
+    search: string
+  }): Promise<ITicketDTO[]>
   getTicket(id: string): Promise<ITicketDTO>
 }
 
@@ -24,19 +28,28 @@ export const ticketsAPI: ITicketsAPI = {
       '/tickets',
       { params }
     )
-    return response.data
+
+    console.log(response.data)
+
+    return response.data || []
   },
 
-  async searchTickets(query: string): Promise<ITicketDTO[]> {
+  async searchTickets(
+    params: {
+      page: number
+      limit: number
+      search: string
+    } = { page: 1, limit: 6, search: '' }
+  ): Promise<ITicketDTO[]> {
     const response: AxiosResponse<ITicketDTO[]> = await axiosInstance.get(
       '/tickets',
       {
         params: {
-          search: query,
+          ...params,
         },
       }
     )
-    return response.data
+    return response.data || []
   },
 
   async getTicket(id: string): Promise<ITicketDTO> {
@@ -44,6 +57,6 @@ export const ticketsAPI: ITicketsAPI = {
       `/tickets/${id}`
     )
 
-    return response.data
+    return response.data || {}
   },
 }

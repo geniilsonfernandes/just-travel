@@ -8,9 +8,11 @@ import Typography from '../Typography'
 //   <div className='fixed top-0 left-0 w-full h-full ' {...props} />
 // )
 
-const CartButton = () => {
-  const cartItems = 5
+type CartButtonProps = {
+  cartItems: number
+}
 
+const CartButton = ({ cartItems = 0 }: CartButtonProps) => {
   const [show, setShow] = useState(false)
 
   const handleTogle = () => {

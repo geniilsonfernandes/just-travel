@@ -37,8 +37,8 @@ const TicketCard = ({
   isFavorite = false,
 }: TicketCardProps) => {
   return (
-    <div className='flex  items-center bg-white shadow-md h-[233px]'>
-      <div className='w-[213px] h-[233px] relative'>
+    <div className='flex flex-col w-full sm:flex-row  bg-white shadow-md '>
+      <div className='w-full sm:w-[213px] h-[233px] relative'>
         <div className='absolute top-0 left-0 flex justify-between p-3 w-full items-center'>
           <Badge label='Ingresso' />
 
@@ -52,7 +52,7 @@ const TicketCard = ({
           className='bg-gray-10 object-cover w-full h-full'
         />
       </div>
-      <div className='py-10 px-6 h-full flex flex-1'>
+      <div className='py-10 px-6 h-full flex flex-1 '>
         <div className='flex flex-col justify-between gap-1 h-full flex-1 border-r border-gray-200'>
           <div>
             <Typography as='h3' color='brandBlack' className='font-bold'>

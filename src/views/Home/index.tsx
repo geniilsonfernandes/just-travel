@@ -31,20 +31,22 @@ const Home = () => {
 
   return (
     <div>
-      <div className='bg-white'>
+      <div className='bg-white px-6 sm:px-0'>
         <Search />
       </div>
 
-      <div className='container py-9 h-full grid grid-cols-12 gap-8 '>
-        <div className='col-span-4 '>
+      <div className='container py-9 h-full grid grid-cols-12 gap-8 px-6 sm:px-0'>
+        <div className='col-span-12 sm:col-span-12 md:col-span-4 '>
           <Filter />
         </div>
 
         <RenderIf condition={isError}>
-          <ErrorMessage
-            error={error || 'Erro ao buscar ingressos'}
-            onClick={() => dispatch(fetchTickets())}
-          />
+          <div className='flex flex-col col-span-8 gap-6'>
+            <ErrorMessage
+              error={error || 'Erro ao buscar ingressos'}
+              onClick={() => dispatch(fetchTickets())}
+            />
+          </div>
         </RenderIf>
 
         <RenderIf condition={!isError && isLoading}>
@@ -56,11 +58,13 @@ const Home = () => {
         </RenderIf>
 
         <RenderIf condition={!isError && !isLoading && isEmpty}>
-          <Empty onClick={() => dispatch(fetchTickets())} />
+          <div className='flex flex-col col-span-8 gap-6'>
+            <Empty onClick={() => dispatch(fetchTickets())} />
+          </div>
         </RenderIf>
 
         <RenderIf condition={!isError && !isLoading && !isEmpty}>
-          <div className='flex flex-col col-span-8 gap-6'>
+          <div className='flex flex-col col-span-12 sm:col-span-8 gap-6 '>
             {data.map((ticket, i) => (
               <TicketCard
                 key={ticket.id + i}
