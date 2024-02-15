@@ -13,7 +13,11 @@
 
   <p align="center">
     projeto para compra de ingressos online
+
+      <a href="https://just-travel-tau.vercel.app/">deploy</a>
   <p>
+
+  
 
   <h2 align="center" id="stacks-utilizadas">Stacks utilizadas</h2>
 <p align="center">
