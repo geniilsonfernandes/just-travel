@@ -14,7 +14,7 @@
   <p align="center">
     projeto para compra de ingressos online
 
-      <a href="https://just-travel-tau.vercel.app/">deploy</a>
+<a align="center" href="https://just-travel-tau.vercel.app/">Projeto online</a>
   <p>
 
   
